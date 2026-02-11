@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wunderbuild Email Signature Generator</title>
+  <meta name="description" content="Generate a Wunderbuild email signature without touching HTML. Copy and paste into Gmail in one click." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div>
+        <h1>Wunderbuild Email Signature Generator</h1>
+        <p class="subtitle">Fill the fields. Preview updates instantly. Copy for Gmail with one click.</p>
+      </div>
+      <div class="chip">Client-side • No data stored</div>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="panel">
+      <h2>Your details</h2>
+
+      <form id="sigForm" class="form" autocomplete="on">
+        <label class="field">
+          <span>Full name</span>
+          <input id="fullName" name="fullName" type="text" placeholder="e.g., Kristine Nogra" required />
+        </label>
+
+        <label class="field">
+          <span>Position / title</span>
+          <input id="position" name="position" type="text" placeholder="e.g., Marketing &amp; Communications Specialist" required />
+        </label>
+
+        <label class="field">
+          <span>Email</span>
+          <input id="email" name="email" type="email" placeholder="e.g., name@wunderbuild.com" required />
+        </label>
+
+        <label class="field">
+          <span>Contact number</span>
+          <input id="phone" name="phone" type="tel" placeholder="e.g., 1300 161 626" />
+          <small class="hint">This updates the clickable <code>tel:</code> link too.</small>
+        </label>
+
+        <div class="buttons">
+          <button id="copyBtn" type="button" class="btn btn--primary">Copy for Gmail</button>
+          <button id="downloadRtfBtn" type="button" class="btn btn--secondary">Download .rtf</button>
+          <button id="copyHtmlBtn" type="button" class="btn btn--ghost">Copy HTML</button>
+          <button id="resetBtn" type="button" class="btn btn--ghost">Reset</button>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <details class="details">
+          <summary>How to paste into Gmail</summary>
+          <ol>
+            <li>Open Gmail → ⚙️ Settings → <strong>See all settings</strong>.</li>
+            <li>Scroll to <strong>Signature</strong> and create a new signature.</li>
+            <li>Click inside the signature box and paste.</li>
+            <li>Scroll down and click <strong>Save Changes</strong>.</li>
+          </ol>
+          <p class="hint">Tip: If paste looks wrong, try pasting once into a blank Google Doc, then copy from the Doc into Gmail.</p>
+        </details>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel__head">
+        <h2>Live preview</h2>
+        <div class="panel__meta">
+          <span class="pill">What you see is what gets copied</span>
+        </div>
+      </div>
+
+      <div class="previewWrap">
+        <div id="preview" class="preview" aria-label="Email signature preview"></div>
+      </div>
+
+      <h3>Generated HTML (read-only)</h3>
+      <p class="hint">You generally won’t need this — it’s here for IT or troubleshooting.</p>
+      <textarea id="htmlOut" class="code" readonly spellcheck="false"></textarea>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Made for internal use. All generation happens in your browser.</p>
+      <p class="muted">Clipboard write requires HTTPS (GitHub Pages provides it). If your browser blocks clipboard access, use “Download .rtf”.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
