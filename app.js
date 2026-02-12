@@ -73,6 +73,7 @@ function buildSignatureHTML(data) {
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #333;">
   <tbody>
     <tr>
+    <br>
       <td style="padding-right: 15px; vertical-align: top;">
         <img src="https://i.imgur.com/BfGzul8.png" alt="Photo" width="60" style="display: block; border-radius: 100px;">
       </td>
